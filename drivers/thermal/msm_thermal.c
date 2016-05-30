@@ -170,7 +170,7 @@ static void check_temp_and_throttle_if_needed(struct work_struct *work)
 	update_all_cpus_max_freq_if_changed(new_bin, temp);
 }
 
-static void check_temp(struct work_struct *work)
+static void __cpuinit check_temp(struct work_struct *work)
 {
 	check_temp_and_throttle_if_needed(work);
 	configure_sensor_trip_points();
